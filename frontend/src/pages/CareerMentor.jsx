@@ -83,11 +83,15 @@ function CareerMentor() {
           </div>
 
           <button
-            onClick={generateRoadmap}
-            className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700"
-          >
-            Generate Roadmap
-          </button>
+  type="button"
+  onClick={() => {
+    console.log("BUTTON CLICKED");
+    generateRoadmap();
+  }}
+  className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700"
+>
+  Generate Roadmap
+</button>
         </div>
 
         {result && (
