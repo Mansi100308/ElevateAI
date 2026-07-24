@@ -9,13 +9,11 @@ function CareerMentor() {
 
   async function generateRoadmap() {
     try {
-      const response = await fetch(
-  "https://elevateai-8lcu.onrender.com/career",
-  {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
+      const response = await fetch("https://elevateai-8lcu.onrender.com/career", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
     body: JSON.stringify({
       career_goal: careerGoal,
       education: education,
