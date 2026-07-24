@@ -4,6 +4,7 @@ from pydantic import BaseModel
 
 app = FastAPI()
 
+# CORS
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
@@ -15,18 +16,22 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Request Model
 class CareerRequest(BaseModel):
     career_goal: str
     education: str
     skills: str
 
+
+# Home Route
 @app.get("/")
 def home():
     return {"message": "ElevateAI Backend Running 🚀"}
 
+
+# Career Route
 @app.post("/career")
 def generate_career(data: CareerRequest):
-
     roadmap = f"""
 🎯 Personalized Career Roadmap
 
